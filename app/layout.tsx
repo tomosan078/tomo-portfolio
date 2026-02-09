@@ -16,12 +16,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-<body>
-  {/* 背景装飾 */}
-  <div className="bg-circle one" />
-  <div className="bg-circle two" />
-  {children}
-</body>
+        {/* 背景装飾 */}
+        <div className="bg-circle one" />
+        <div className="bg-circle two" />
+
+        {children}
+      </body>
     </html>
   );
 }
