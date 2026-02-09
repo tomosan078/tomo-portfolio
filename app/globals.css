@@ -92,3 +92,38 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+.bg-circle {
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.06;
+  filter: blur(50px);
+  z-index: -1;
+  animation: float 18s ease-in-out infinite;
+}
+
+.bg-circle.one {
+  top: 15%;
+  left: -100px;
+}
+
+.bg-circle.two {
+  bottom: 10%;
+  right: -120px;
+  animation-duration: 22s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
