@@ -18,13 +18,17 @@ export default function Page() {
         <Hero />
 
         <Section title="About">
-          <p>アニメーションとUIが好きです。</p>
+          <p>どうも。tomosan078と申します。私の周りは団体運営者さんとかサーバー運営者さんが<br>
+いっぱいいますが、私は特に団体や、サーバー運営等は特にしていません。<br>
+AGAMES公式Discordでボランティアでお助けをしています。そんな感じの人です。<br>
+知らない方とはあまり関わらない方針で行っています。<br>
+私を紹介する為のポートフォリオですが...よろしくお願いいたします。</p>
         </Section>
 
         <Section title="Works">
           <div className="grid">
             <div className="card" onClick={() => setOpen(true)}>
-              Work 1
+              AGAMES Official Discord Moderator
             </div>
           </div>
         </Section>
