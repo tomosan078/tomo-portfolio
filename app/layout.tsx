@@ -22,7 +22,6 @@ export default function RootLayout({
   <div className="bg-circle two" />
   {children}
 </body>
-{children}</body>
     </html>
   );
 }
