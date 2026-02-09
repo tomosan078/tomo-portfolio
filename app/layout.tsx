@@ -20,7 +20,6 @@ export default function RootLayout({
   {/* 背景装飾 */}
   <div className="bg-circle one" />
   <div className="bg-circle two" />
-
   {children}
 </body>
 {children}</body>
