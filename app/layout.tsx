@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        {/* 背景装飾 */}
+        {/* 背景装飾（浮遊する○） */}
         <div className="bg-circle one" />
         <div className="bg-circle two" />
 
