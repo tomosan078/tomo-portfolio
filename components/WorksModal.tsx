@@ -26,7 +26,9 @@ export default function WorksModal({
             onClick={(e) => e.stopPropagation()}
           >
             <h3>Work Detail</h3>
-            <p>ここに作品説明を書く</p>
+            <p>AGAMES公式Discordサーバーのモデレーターをしています。<br>
+主にルール制定や治安維持等の活動を、スタッフさん方と話し合いながら行なっています。
+</p>
           </motion.div>
         </motion.div>
       )}
