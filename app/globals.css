@@ -1,168 +1,61 @@
-:root {
-  --bg: #f9fafb;
-  --text: #334155;
-  --card: #ffffff;
-}
 
-body[data-theme="dark"] {
-  --bg: #0f172a;
-  --text: #e5e7eb;
-  --card: #1e293b;
-}
-
+/* ===== ベース ===== */
 body {
   background: var(--bg);
   color: var(--text);
   margin: 0;
+  position: relative;
 }
 
 main {
+  position: relative;
+  z-index: 1;
   max-width: 1100px;
   margin: auto;
   padding: 16px;
 }
 
-.scroll-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(90deg, #a7c7e7, #f7d6e0);
-  transform-origin: left;
-  z-index: 100;
+/* ===== カラーテーマ ===== */
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --accent: #3b82f6;
 }
 
-.theme-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  border: none;
-  border-radius: 50%;
-  padding: 12px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.hero {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.char {
-  display: inline-block;
-}
-
-.section {
-  margin: 96px 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.card {
-  background: var(--card);
-  padding: 24px;
-  border-radius: 16px;
-  cursor: pointer;
-}
-
-.modal-bg {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  background: var(--card);
-  padding: 32px;
-  border-radius: 16px;
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.bg-circle {
-  position: fixed;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.06;
-  filter: blur(50px);
-  z-index: -1;
-  animation: float 18s ease-in-out infinite;
-}
-
-.bg-circle.one {
-  top: 15%;
-  left: -100px;
-}
-
-.bg-circle.two {
-  bottom: 10%;
-  right: -120px;
-  animation-duration: 22s;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-40px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+body[data-theme="dark"] {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --accent: #60a5fa;
 }
 
 /* ===== 背景の浮遊○ ===== */
-
 .bg-circle {
   position: fixed;
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background: #6b8cff; /* アクセントカラー（一旦固定） */
+  background: var(--accent);
   opacity: 0.06;
-  filter: blur(50px);
-  z-index: -1;
-  animation: float 18s ease-in-out infinite;
+  filter: blur(60px);
+  z-index: 0;
   pointer-events: none;
+  animation: floatY 20s ease-in-out infinite;
 }
 
 .bg-circle.one {
   top: 15%;
-  left: -100px;
+  left: -120px;
 }
 
 .bg-circle.two {
   bottom: 10%;
-  right: -120px;
-  animation-duration: 24s;
+  right: -140px;
+  animation-duration: 28s;
 }
 
-/* 浮遊アニメーション */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-40px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+/* 縦方向にゆっくり */
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
 }
