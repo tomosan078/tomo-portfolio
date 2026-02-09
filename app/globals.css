@@ -1,12 +1,16 @@
+/* ===== リセット ===== */
+* {
+  box-sizing: border-box;
+}
 
-/* ===== ベース ===== */
 body {
-  background: var(--bg);
-  color: var(--text);
   margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
   position: relative;
 }
 
+/* ===== レイアウト ===== */
 main {
   position: relative;
   z-index: 1;
@@ -15,17 +19,16 @@ main {
   padding: 16px;
 }
 
-/* ===== カラーテーマ ===== */
-:root {
-  --bg: #f8fafc;
-  --text: #0f172a;
-  --accent: #3b82f6;
+/* ===== Hero ===== */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-body[data-theme="dark"] {
-  --bg: #020617;
-  --text: #e5e7eb;
-  --accent: #60a5fa;
+.char {
+  display: inline-block;
 }
 
 /* ===== 背景の浮遊○ ===== */
@@ -34,7 +37,7 @@ body[data-theme="dark"] {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: var(--accent);
+  background: #3b82f6;
   opacity: 0.06;
   filter: blur(60px);
   z-index: 0;
@@ -53,9 +56,43 @@ body[data-theme="dark"] {
   animation-duration: 28s;
 }
 
-/* 縦方向にゆっくり */
 @keyframes floatY {
   0% { transform: translateY(0); }
   50% { transform: translateY(-50px); }
   100% { transform: translateY(0); }
+}
+
+/* ===== セクション ===== */
+.section {
+  margin: 96px 0;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+}
+
+/* ===== Works ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin: 64px 0;
+  }
 }
